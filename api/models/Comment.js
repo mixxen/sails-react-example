@@ -3,17 +3,17 @@
  *
  * @module      :: Model
  * @description :: A short summary of how this model works and what it represents.
- * @docs		:: http://sailsjs.org/#!documentation/models
+ * @docs        :: http://sailsjs.org/#!documentation/models
  */
 
 module.exports = {
 
   attributes: {
-  	
-  	author: 'string',
+  
+    author: 'string',
 
-  	text: 'string'
-  	
+    text: 'string'
+  
   }
 
 };
