@@ -8,7 +8,7 @@
  * At the top part of this file, you'll find a few of the most commonly
  * configured options, but Sails' integration with Grunt is also fully
  * customizable.  If you'd like to work with your assets differently 
- * you can change this file to do anything you like!
+ * you can change this  file to do anything you like!
  *
  * More information on using Grunt to work with static assets:
  * http://gruntjs.com/configuring-tasks
@@ -29,6 +29,8 @@ module.exports = function (grunt) {
    */
 
   var cssFilesToInject = [
+    'bower_components/bootstrap/dist/css/bootstrap.css',
+    'bower_components/bootstrap/dist/css/bootstrap-theme.css',
     'linker/**/*.css'
   ];
 
@@ -53,10 +55,11 @@ module.exports = function (grunt) {
     'linker/js/sails.io.js',
 
     // *->    put other dependencies here   <-*
-    'linker/js/react.js',
-    'linker/js/JSXTransformer.js', //TODO, not using atm since jsx is compiled, need linker
-    'linker/js/jquery.js',
-    'linker/js/showdown.js',   
+    'bower_components/react/react-with-addons.js',
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/jquery-timeago/jquery.timeago.js',  
+    'bower_components/showdown/compressed/showdown.js',  
+    'bower_components/bootstrap/dist/js/bootstrap.js',
 
     // A simpler boilerplate library for getting you up and running w/ an
     // automatic listener for incoming messages from Socket.io.

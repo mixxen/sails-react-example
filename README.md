@@ -13,6 +13,7 @@ Inspired by the React.js Comment tutorial, this example shows a way to integrate
 git clone https://github.com/mixxen/sails-react-example.git
 cd sails-react-example
 npm install
+bower install
 node app.js
 open http://localhost:1337
 ```
@@ -40,7 +41,7 @@ open http://localhost:1337
 
 4. Edit Gruntfile.js to support jsx files
 
-5. Put these javascript libraries in the assets/linker/ folder:
+5. Pull these components from Bower
    * Bootstrap
    * jQuery
    * React
