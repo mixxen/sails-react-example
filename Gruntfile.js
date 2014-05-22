@@ -54,20 +54,11 @@ module.exports = function (grunt) {
     // then beef it up with some convenience logic for talking to Sails.js
     'linker/js/sails.io.js',
 
-    // *->    put other dependencies here   <-*
-    'bower_components/react/react-with-addons.js',
-    'bower_components/jquery/dist/jquery.js',
-    'bower_components/jquery-timeago/jquery.timeago.js',  
-    'bower_components/showdown/compressed/showdown.js',  
-    'bower_components/bootstrap/dist/js/bootstrap.js',
+    // file loading is handled by requirejs
+    'bower_components/requirejs/require.js',
 
-    // A simpler boilerplate library for getting you up and running w/ an
-    // automatic listener for incoming messages from Socket.io.
-    'linker/js/app.jsx',
-
-
-    // All of the rest of your app scripts imported here
-    'linker/**/*.js'
+    // the requirejs main loading point
+    'linker/js/main.js',
   ];
 
 

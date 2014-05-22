@@ -1,7 +1,7 @@
 {
   "name": "sails-react-example",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sails and React integration example",
   "dependencies": {
     "sails": "0.9.16",

@@ -1,12 +1,14 @@
 /** @jsx React.DOM */
 
+define(['react', 'jquery', 'showdown', 'jquery.timeago'], function(React, $, Showdown) {
+
 var converter = new Showdown.converter();
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var CommentBox = React.createClass({
 
   //could be optimized to render changes instead of pulling everything
-  loadCommentsFromServer: function(message) {
+  loadCommentsFromServer: function(message) { 
     $.ajax({
       url: this.props.url,
       success: function(data) {
@@ -110,36 +112,10 @@ var CommentForm = React.createClass({
   }
 });
 
+return CommentBox;
 
 
-$(function whenDomIsReady() {
-
-    // as soon as this file is loaded, connect automatically, 
-    var socket = io.connect();
-    
-    console.log('Connecting to Sails.js...');
-
-    socket.on('connect', function socketConnected() {
-
-      // Subscribe to updates (a sails get or post will auto subscribe to updates)
-      socket.get('/comment', function (message) {
-        console.log('Listening...');
-
-        // initialize the view with the data property
-        React.renderComponent(
-          <CommentBox url="/comment" data={message} />,
-          document.getElementById('container')
-        );
-
-      });
-
-    });
-
-    // Expose connected `socket` instance globally so that it's easy
-    // to experiment with from the browser console while prototyping.
-    window.socket = socket;
-
-});
+}); //define
 
 
 
