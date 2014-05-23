@@ -80,7 +80,7 @@ define(['app/utils'], function (Utils) {
         this.socket.delete(this.url + '/' + todo.id, function whenServerResponds(data) {
           console.log('Message destroy :: ', data);
         });
-    });
+    }.bind(this));
   };
 
   return TodoModel;
