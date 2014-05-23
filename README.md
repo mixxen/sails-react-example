@@ -39,7 +39,7 @@ open http://localhost:1337
    npm install grunt-react
    ```
 
-4. Edit Gruntfile.js to support jsx files
+4. Edit Gruntfile.js to support jsx files (see Gruntfile.js file for examples)
 
 5. Pull these components from Bower
    * Bootstrap
@@ -47,8 +47,9 @@ open http://localhost:1337
    * React
    * Showdown
    * Timeago
+   * RequireJS
 
-6. Edit Gruntfile.js to include javascript libraries in the correct order
+6. Edit Gruntfile.js to include RequireJS. RequireJS will handle loading of js libraries.
 
 7. Create assets/linker/styles/styles.css for styles and animation css 
 
