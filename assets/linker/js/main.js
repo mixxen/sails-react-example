@@ -5,7 +5,7 @@ requirejs.config({
       'jquery.timeago': 'bower_components/jquery-timeago/jquery.timeago',  
       'showdown': 'bower_components/showdown/compressed/showdown',  
       'bootstrap': 'bower_components/bootstrap/dist/js/bootstrap',
-      'jsx': 'bower_components/requirejsx/jsx',
+      'jsx': 'bower_components/requirejsx/jsx', //needed if jsx not compiled on server
       'JSXTransformer': 'bower_components/react/JSXTransformer',
       'app': 'linker/js'
     },
@@ -18,10 +18,16 @@ requirejs.config({
     }
 });
 
-require(['jquery', 'react', 'app/app'], function ($, React, CommentBox) {
+require(['jquery', 'react', 'app/CommentForm', 'app/CommentList'], 
+  function ($, React, CommentForm, CommentList) {
 
 
   $(function whenDomIsReady() {
+
+      React.renderComponent(
+        CommentForm({url: '/comment'}),
+        document.getElementById('commentForm')
+      );
 
       // as soon as this file is loaded, connect automatically, 
       var socket = io.connect();
@@ -36,8 +42,8 @@ require(['jquery', 'react', 'app/app'], function ($, React, CommentBox) {
 
           // initialize the view with the data property
           React.renderComponent(
-            CommentBox({url: '/comment', data:message}),
-            document.getElementById('container')
+            CommentList({url: '/comment', data:message}),
+            document.getElementById('commentList')
           );
 
         });
