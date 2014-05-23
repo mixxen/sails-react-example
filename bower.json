@@ -24,6 +24,8 @@
     "jquery-timeago": "~1.4.1",
     "requirejs": "~2.1.11",
     "showdown": "~0.3.1",
-    "requirejsx": "*"
+    "requirejsx": "*",
+    "todomvc-common": "~0.1.9",
+    "director": "~1.2.2"
   }
 }

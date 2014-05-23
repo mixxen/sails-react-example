@@ -1,13 +1,13 @@
 requirejs.config({
     paths: {
-      'react': 'bower_components/react/react-with-addons',
-      'jquery': 'bower_components/jquery/dist/jquery',
-      'jquery.timeago': 'bower_components/jquery-timeago/jquery.timeago',  
-      'showdown': 'bower_components/showdown/compressed/showdown',  
-      'bootstrap': 'bower_components/bootstrap/dist/js/bootstrap',
-      'jsx': 'bower_components/requirejsx/jsx', //needed if jsx not compiled on server
-      'JSXTransformer': 'bower_components/react/JSXTransformer',
-      'app': 'linker/js'
+      'react': '/bower_components/react/react-with-addons',
+      'jquery': '/bower_components/jquery/dist/jquery',
+      'jquery.timeago': '/bower_components/jquery-timeago/jquery.timeago',  
+      'showdown': '/bower_components/showdown/compressed/showdown',  
+      'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap',
+      'jsx': '/bower_components/requirejsx/jsx', //needed if jsx not compiled on server
+      'JSXTransformer': '/bower_components/react/JSXTransformer',
+      'app': '/linker/js'
     },
 
     shim: {
