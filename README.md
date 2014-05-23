@@ -6,6 +6,8 @@ Inspired by the React.js Comment tutorial, this example shows a way to integrate
 * [Sails Tutorial](https://www.youtube.com/watch?v=uxojCaDSyZA)
 * [React Tutorial](http://facebook.github.io/react/docs/tutorial.html)
 * [React Animation](http://facebook.github.io/react/docs/animation.html)
+* [React TodoMVC](https://github.com/tastejs/todomvc/tree/gh-pages/architecture-examples/react)
+* [RequireJS](http://requirejs.org/)
 
 ## Run Instructions
 
@@ -72,4 +74,3 @@ open http://localhost:1337
 ## Todo
 
 * Add passport authentication
-* Add todo list example
