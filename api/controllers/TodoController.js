@@ -17,7 +17,7 @@
 
 module.exports = {
     
-   app : function(req, res) {
+  app : function(req, res) {
 
     return res.view({});
     
