@@ -1,6 +1,6 @@
-# Sails.js + React.js Example
+# Sails.js + React.js Examples
 
-Inspired by the React.js Comment tutorial, this example shows a way to integrate Sails.js as the real time persistent backend model to a React.js frontend. The example provides a markdown chat application which automatically pushes comment updates to all connected clients.
+Inspired by the React.js tutorials, these examples shows ways to integrate Sails.js as the real time persistent backend model to a React.js frontend. Two examples are provided: a markdown chat application and the TodoMVC application. Both showcasing the real time capabilities for multiple clients.
 
 #### References
 * [Sails Tutorial](https://www.youtube.com/watch?v=uxojCaDSyZA)
