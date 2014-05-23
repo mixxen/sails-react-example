@@ -56,9 +56,6 @@ module.exports = function (grunt) {
 
     // file loading is handled by requirejs
     'bower_components/requirejs/require.js',
-
-    // the requirejs main loading point
-    'linker/js/main.js',
   ];
 
 
