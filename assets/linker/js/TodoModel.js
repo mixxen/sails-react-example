@@ -53,7 +53,7 @@ define(['app/utils'], function (Utils) {
       this.socket.put(this.url + '/' + todo.id, {completed: checked}, function whenServerResponds(data) {
         console.log('Message toggleAll :: ', data);
       });
-    });
+    }.bind(this));
   };
 
   TodoModel.prototype.toggle = function (todoToToggle) {
