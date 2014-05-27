@@ -11,6 +11,13 @@ Inspired by the React.js tutorials, these examples shows ways to integrate Sails
 
 ## Run Instructions
 
+#### Prerequisites
+* git
+* [nodejs](http://nodejs.org)
+* [npm](http://npmjs.org)
+* [bower](http://bower.io)
+
+
 ```bash
 git clone https://github.com/mixxen/sails-react-example.git
 cd sails-react-example
