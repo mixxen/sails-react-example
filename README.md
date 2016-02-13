@@ -1,6 +1,7 @@
 # Sails.js + React.js Examples
 
-Inspired by the React.js tutorials, these examples shows ways to integrate Sails.js as the real time persistent backend model to a React.js frontend. Two examples are provided: a markdown chat application and the TodoMVC application. Both showcasing the real time capabilities for multiple clients.
+Inspired by the React.js tutorials, these examples shows ways to integrate Sails.js as the real time persistent backend model to a React.js frontend. 
+Two examples are provided: a markdown chat application and the TodoMVC application. Both showcasing the real time capabilities for multiple clients.
 
 #### References
 * [Sails Tutorial](https://www.youtube.com/watch?v=uxojCaDSyZA)
@@ -24,7 +25,7 @@ cd sails-react-example
 npm install
 bower install
 node app.js
-open http://localhost:1337
+open http://localhost:1337 (open multiple windows to see real time capabilities of Sailsjs)
 ```
 
 ## Start from Scratch
@@ -37,44 +38,40 @@ open http://localhost:1337
 2. Create new Sails project
 
    ```
-   sails new sails-react-example --linker
+   sails new sails-react-example
    ```
 
-3. Change directory to sails-react-example
+3. Change directory to ```sails-react-example```
 
-4. Install grunt-react
+4. Install grunt-babel
 
    ```
-   npm install grunt-react
+   npm install grunt-babel babel-preset-es2015 babel-preset-react --save
    ```
 
-4. Edit Gruntfile.js to support jsx files (see Gruntfile.js file for examples)
+4. Edit ```compileAssets.js syncAssets.js config/babel.js``` to support jsx files
 
-5. Pull these components from Bower
-   * Bootstrap
-   * jQuery
-   * React
-   * Showdown
-   * Timeago
-   * RequireJS
+5. Install bower and add components (see ```bower.json```)
 
-6. Edit Gruntfile.js to include RequireJS. RequireJS will handle loading of js libraries.
+  ```
+  npm install bower --save
+  ```
 
-7. Create assets/linker/styles/styles.css for styles and animation css 
+6. Create ```assets/styles/styles.css``` for styles and animation css 
 
-8. Create Comment model and controller
+7. Create Comment model and controller
 
    ```
    sails generate comment
    ```
-9. Edit views/home/index.ejs and put ```<div class="container" id="container"></div>``` somewhere
+8. Edit ```views/xxx.ejs``` and put ```<div class="myComponent" id="container"></div>``` somewhere
 
-10. Rename assets/linker/js/app.js to assets/linker/js/app.jsx and start coding. Be sure to call ```renderCompoenent``` somewhere and reference the div in previous step. Example:
+9. Be sure to call ```React.render``` somewhere and reference the div in previous step. Example:
 
    ```javascript
-   React.renderComponent(
+   ReactDOM.render(
      <CommentBox url="/comment" data={message} />,
-     document.getElementById('container')
+     document.getElementById('myComponent')
    );
    ```
 
@@ -84,4 +81,4 @@ open http://localhost:1337
 
 ## Todo
 
-* Add passport authentication
+* Webpack instead of RequireJS (see [react-webpack-express]https://github.com/mixxen/react-webpack-express for express boilerplate)

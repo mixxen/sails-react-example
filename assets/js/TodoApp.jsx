@@ -1,11 +1,3 @@
-/**
- * @jsx React.DOM
- */
-/*jshint quotmark:false */
-/*jshint white:false */
-/*jshint trailing:false */
-/*jshint newcap:false */
-/*global React, Router*/
 define(['react', 'app/TodoFooter', 'app/TodoItem', 'app/utils'], function (React, TodoFooter, TodoItem, Utils) {
   'use strict';
 
@@ -34,11 +26,11 @@ define(['react', 'app/TodoFooter', 'app/TodoItem', 'app/utils'], function (React
         return;
       }
 
-      var val = this.refs.newField.getDOMNode().value.trim();
+      var val = this.refs.newField.value.trim();
 
       if (val) {
         this.props.model.addTodo(val);
-        this.refs.newField.getDOMNode().value = '';
+        this.refs.newField.value = '';
       }
 
       return false;

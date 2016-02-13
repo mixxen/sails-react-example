@@ -1,12 +1,4 @@
-/**
- * @jsx React.DOM
- */
-/*jshint quotmark:false */
-/*jshint white:false */
-/*jshint trailing:false */
-/*jshint newcap:false */
-/*global React */
-define(['react', 'app/utils'], function (React, Utils) {
+define(['react', 'app/utils', 'classnames'], function (React, Utils, cx) {
   'use strict';
 
   var TodoFooter = React.createClass({
@@ -24,8 +16,6 @@ define(['react', 'app/utils'], function (React, Utils) {
         );
       }
 
-      // React idiom for shortcutting to `classSet` since it'll be used often
-      var cx = React.addons.classSet;
       var nowShowing = this.props.nowShowing;
       return (
         <footer id="footer">

@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 define(['react', 'showdown', 'jquery', 'jquery.timeago'], 
   function(React, Showdown, $) {
 
@@ -35,13 +33,13 @@ var CommentList = React.createClass({
     var url = this.props.url;
     var commentNodes = this.state.data.reverse().map(function (comment, index) {
       return (
-        <Comment key={comment.id} author={comment.author} time={comment.createdAt} url={url}>
+        <Comment key={comment.id} author={comment.author} time={comment.createdAt} url={url} commentid={comment.id}>
           {comment.text}
         </Comment>);
     });
     return (
       <div className="commentList">
-        <ReactCSSTransitionGroup transitionName="example">
+        <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
           {commentNodes}
         </ReactCSSTransitionGroup>
       </div>
@@ -53,7 +51,7 @@ var Comment = React.createClass({
 
   handleClick: function(e) {
     console.log('click occured ' + e + ' to ' + this.props.url);
-    socket.delete(this.props.url + '/' + this.props.key, function whenServerResponds(data) {
+    socket.delete(this.props.url + '/' + this.props.commentid, function whenServerResponds(data) {
       console.log('Message deleted :: ', data);
     });  
   },

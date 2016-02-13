@@ -1,6 +1,6 @@
 {
   "name": "sails-react-example",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/mixxen/sails-react-example",
   "authors": [
     "alexander.cabello@gmail.com <alexander.cabello@gmail.com>"
@@ -18,14 +18,14 @@
     "tests"
   ],
   "dependencies": {
-    "react": "~0.10.0",
-    "jquery": "~2.1.1",
-    "bootstrap": "~3.1.1",
+    "react": "~0.14.7",
+    "jquery": "~2.2.0",
+    "bootstrap": "~3.3.6",
     "jquery-timeago": "~1.4.1",
-    "requirejs": "~2.1.11",
+    "requirejs": "~2.1.22",
     "showdown": "~0.3.1",
-    "requirejsx": "*",
     "todomvc-common": "~0.1.9",
-    "director": "~1.2.2"
+    "director": "~1.2.2",
+    "classnames": "~2.2.3"
   }
 }

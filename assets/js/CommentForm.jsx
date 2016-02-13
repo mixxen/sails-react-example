@@ -1,15 +1,14 @@
-/** @jsx React.DOM */
-
 define(['react'], function(React) {
 
 
 var CommentForm = React.createClass({
   
-  handleSubmit: function() {
-    var author = this.refs.author.getDOMNode().value.trim();
-    var text = this.refs.text.getDOMNode().value.trim();
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var author = this.refs.author.value.trim();
+    var text = this.refs.text.value.trim();
     this.onCommentSubmit({author: author, text: text});
-    this.refs.text.getDOMNode().value = '';
+    this.refs.text.value = '';
     return false;
   },
 

@@ -1,22 +1,24 @@
 requirejs.config({
     paths: {
       'react': '/bower_components/react/react-with-addons',
+      'reactdom': '/bower_components/react/react-dom',
+      'classnames': '/bower_components/classnames/index',
       'app': '/js'
     },
 });
 
-require(['react', 'app/TodoModel', 'app/TodoApp'], 
-  function (React, TodoModel, TodoApp) {
+require(['react', 'reactdom', 'app/TodoModel', 'app/TodoApp'], 
+  function (React, ReactDOM, TodoModel, TodoApp) {
 
   // as soon as this file is loaded, connect automatically, 
-  var socket = io.connect();
+  var socket = io.sails.connect();
 
   var model = new TodoModel('/todo', socket);
 
   function render() {
 
-    React.renderComponent(
-      TodoApp({model: model}),
+    ReactDOM.render(
+      <TodoApp model={model}/>,
       document.getElementById('todoapp')
     );
   }

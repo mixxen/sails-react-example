@@ -1,36 +1,32 @@
 requirejs.config({
     paths: {
       'react': '/bower_components/react/react-with-addons',
+      'reactdom': '/bower_components/react/react-dom',
       'jquery': '/bower_components/jquery/dist/jquery',
       'jquery.timeago': '/bower_components/jquery-timeago/jquery.timeago',  
       'showdown': '/bower_components/showdown/compressed/Showdown',  
       'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap',
-      'jsx': '/bower_components/requirejsx/jsx', //needed if jsx not compiled on server
-      'JSXTransformer': '/bower_components/react/JSXTransformer',
       'app': '/js'
     },
 
     shim: {
-        'JSXTransformer': {
-            exports: "JSXTransformer"
-        }, 
-        'jquery.timeago': ["jquery"]
+      'jquery.timeago': ["jquery"]
     }
 });
 
-require(['jquery', 'react', 'app/CommentForm', 'app/CommentList'], 
-  function ($, React, CommentForm, CommentList) {
+require(['jquery', 'react', 'reactdom', 'app/CommentForm', 'app/CommentList'], 
+  function ($, React, ReactDOM, CommentForm, CommentList) {
 
 
   $(function whenDomIsReady() {
 
-      React.renderComponent(
-        CommentForm({url: '/comment'}),
+      ReactDOM.render(
+        <CommentForm url='/comment'/>,
         document.getElementById('commentForm')
       );
 
       // as soon as this file is loaded, connect automatically, 
-      var socket = io.connect();
+      var socket = io.sails.connect();
       
       console.log('Connecting to Sails.js...');
 
@@ -39,8 +35,8 @@ require(['jquery', 'react', 'app/CommentForm', 'app/CommentList'],
         console.log('Listening...' + message);
 
         // initialize the view with the data property
-        React.renderComponent(
-          CommentList({url: '/comment', data:message}),
+        ReactDOM.render(
+          <CommentList url='/comment' data={message} />,
           document.getElementById('commentList')
         );
 

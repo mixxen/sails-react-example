@@ -9,12 +9,10 @@
  */
 module.exports = function(grunt) {
 
-  grunt.config.set('react', {
+  grunt.config.set('babel', {
     dev: {
       options: {
-        bare: true,
-        sourceMap: true,
-        sourceRoot: './'
+        presets: ['react']  
       },
       files: [{
         expand: true,
@@ -26,5 +24,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-react');
+  grunt.loadNpmTasks('grunt-babel');
 };

@@ -1,12 +1,4 @@
-/**
- * @jsx React.DOM
- */
-/*jshint quotmark: false */
-/*jshint white: false */
-/*jshint trailing: false */
-/*jshint newcap: false */
-/*global React */
-define(['react'], function (React) {
+define(['react', 'classnames'], function (React, classNames) {
   'use strict';
 
   var ESCAPE_KEY = 27;
@@ -30,7 +22,7 @@ define(['react'], function (React) {
       // immediately manipulate the DOM as if the rendering's over. Put it as a
       // callback. Refer to app.js' `edit` method
       this.props.onEdit(function () {
-        var node = this.refs.editField.getDOMNode();
+        var node = this.refs.editField.findDOMNode();
         node.focus();
         node.setSelectionRange(node.value.length, node.value.length);
       }.bind(this));
@@ -70,7 +62,7 @@ define(['react'], function (React) {
 
     render: function () {
       return (
-        <li className={React.addons.classSet({
+        <li className={classNames({
           completed: this.props.todo.completed,
           editing: this.props.editing
         })}>

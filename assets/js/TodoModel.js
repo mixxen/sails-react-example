@@ -1,11 +1,3 @@
-/**
- * @jsx React.DOM
- */
-/*jshint quotmark:false */
-/*jshint white:false */
-/*jshint trailing:false */
-/*jshint newcap:false */
-
 define(['app/utils'], function (Utils) {
   'use strict';
 
