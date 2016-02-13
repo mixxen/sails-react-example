@@ -59,14 +59,14 @@ open http://localhost:1337 (open multiple windows to see real time capabilities 
 
 6. Create ```assets/styles/styles.css``` for styles and animation css 
 
-7. Create Comment model and controller
+7. Create models and controllers
 
    ```
    sails generate comment
    ```
-8. Edit ```views/xxx.ejs``` and put ```<div class="myComponent" id="container"></div>``` somewhere
+8. Edit ```views/xxx.ejs``` and put ```<div class="container" id="myComponent"></div>``` somewhere
 
-9. Be sure to call ```React.render``` somewhere and reference the div in previous step. Example:
+9. Be sure to call ```ReactDOM.render``` somewhere and reference the div in previous step. Example:
 
    ```javascript
    ReactDOM.render(
