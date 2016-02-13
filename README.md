@@ -81,4 +81,4 @@ open http://localhost:1337 (open multiple windows to see real time capabilities 
 
 ## Todo
 
-* Webpack instead of RequireJS (see [react-webpack-express]https://github.com/mixxen/react-webpack-express for express boilerplate)
+* Webpack instead of RequireJS (see [react-webpack-express](https://github.com/mixxen/react-webpack-express) for express boilerplate)
